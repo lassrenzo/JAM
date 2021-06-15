@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JAM</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- REACT CDN -->
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <!-- REACT DOM-->
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- BABEL LIBRARY -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!--BOOTSTRAP CDN-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous"/>
+    <!-- FONT AWESOME CDN -->
+     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+<body>
+    <!-- REACT CONTENT LOCATION -->
+    <div id="app">React has not rendered yet.</div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+</script>
+    <script type="text/babel">
+function Navbar() {
+    return ( 
+      <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-dark">
+          <a class="navbar-brand" href="home.html">JAM</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+
+                <form class="form-search" onsubmit="return false">
+            <div class="input-group">
+            <input class="form-control form-control-md search-input"  size="50" type="text" placeholder="Search" id="search" aria-label="Search"/>
+            <button class="btn btn-md btn-success" type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            </form>
+            
+                  <li class="nav-item">
+                      <a class="nav-link active mr-2" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link mr-2" href="popular.html">Popular</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link mr-2" href="anime.html">Anime</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      <div class="container col d-flex justify-content-center">
+      <h1 text-danger class="title1">Anime Trailers</h1>
+    <video width="900"  id="myVideo" controls >
+<source  src="bg/bg2.mp4" type="video/mp4"/>
+    </video>
+    </div>
+      </div>
+    )
+} 
+
+function Card(props) {
+    return (
+
+      <div class="wrapper">
+<div class="card">
+ <img src={props.img} alt=""/> 
+ <div class="info">
+   <h3>{props.name}</h3>
+   <p>{props.type}</p>
+   <p>
+    <a type="button" class="btn fa fa-play" href={props.link} > Play</a>
+ 
+   </p>
+ </div>
+</div>
+</div>
+
+  );
+}
+
+
+
+// VARIABLE FOR JSX REACT
+var destination = document.getElementById('app');
+ReactDOM.render(
+// WHAt
+<div>
+  <Navbar/>
+
+  <div class="col d-flex justify-content-center">
+  <Card
+  img="https://i.pinimg.com/564x/97/60/ad/9760ada6d3d61443cc39321fa3801e34.jpg"
+  name="BORUTO MOVIE"
+  type="JAM Film"
+  link="Boruto-the-Movie.html"
+   />
+  <Card
+  img="https://i.pinimg.com/564x/d3/9c/84/d39c84ceb8fbb7909043debbc9134425.jpg"
+  name="BROLY MOVIE"
+  type="JAM Film" 
+  link="Dragon-Ball-Super-Broly.html"
+  />
+  <Card
+  img="https://i.pinimg.com/564x/e8/1b/fb/e81bfb3b635712b3eb67121eec6a6ee1.jpg"
+  name="THE HELL VERSE"
+  type="JAM Film"
+  link="Bleach-Hell-Verse.html"
+  />
+  <Card
+  img="https://i.pinimg.com/564x/04/84/1d/04841dc76059bfd5869dca1013e5618f.jpg"
+  name="KUROKO'S LASTGAME"
+  type="JAM Film" 
+  link="Kuroko-Last-Game.html"
+  />
+  <Card
+  img="https://i.pinimg.com/564x/2f/8a/17/2f8a17dadfa97d755c427c205d99e81a.jpg"
+  name="YOUR NAME"
+  type="JAM Film" 
+  link="Your-Name.html"
+  />
+  <Card
+  img="https://i.pinimg.com/564x/89/75/85/8975859e42c85fd8e0980b3806a06019.jpg"
+  name="STAMPEDE"
+  type="JAM Film"
+  link="Your-Name.html"
+  />
+</div><br/>
+  
+<div class="col d-flex justify-content-center">
+  <Card
+  img="https://i.pinimg.com/564x/10/77/78/1077783f91a9f7f649fb6127db5ae924.jpg"
+  name="MUGEN TRAIN"
+  type="JAM Film"
+  link="Your-Name.html"
+  />
+  <Card
+  img="https://i.pinimg.com/564x/7d/37/a4/7d37a4c49a2e3ac32a73cddbea51a94d.jpg"
+  name="TOKYO GHOUL"
+  type="JAM Film" 
+  link="Your-Name.html"
+  />
+  <Card
+  img="https://i.pinimg.com/564x/e8/58/97/e858971856e4a000592ee84ee1185e51.jpg"
+  name="OnePiece Z FILM"
+  type="Anime Movie"
+  link="Your-Name.html"
+  />
+  <Card
+  img="https://i.pinimg.com/564x/82/bc/5e/82bc5e0cc68f09911dfebff5d72dbc78.jpg"
+  name="BLEACH LIVEACTION"
+  type="JAM Film"
+  link="Your-Name.html"
+  />
+  <Card
+  img="https://i.pinimg.com/564x/35/70/36/35703601f2d238c49cf3f42900e7d3ea.jpg"
+  name="STRONG WORLD"
+  type="JAM Film"
+  link="Your-Name.html"
+  />
+  <Card
+  img="https://i.pinimg.com/564x/e6/cb/21/e6cb212113b5bef24c7b7e55c5e7c95a.jpg"
+  name="THE LAST"
+  type="JAM Film"
+  link="Your-Name.html"
+  />
+</div><br/>
+</div>,
+// WHERE
+// THIS IS CODE FOR DESTINATION VARIABLE
+  destination
+);
+//JAVASCRIPT RANDOM NUMBERS
+  var randomNumber = Math.floor(Math.random() * 4) + 1;
+var randomVideo = "b" + randomNumber + ".mp4"; 
+var randomVideoSource = "bg/" + randomVideo;
+var video = document.querySelectorAll("source")[0];
+video.setAttribute("src", randomVideoSource);
+
+    var video = document.getElementById("myVideo");
+    var btn = document.getElementById("myBtn");
+//JAVASCRIPT AUTOPLAY
+var vid = document.getElementById("myVideo");
+function enableAutoplay() { 
+  vid.autoplay = true;
+  vid.load();
+}
+const search = document.getElementById("search");
+const animeList = document.querySelectorAll(".info h3");
+
+
+search.addEventListener("keyup", filterAnime);
+
+function filterAnime(e) {
+    const text = e.target.value.toLowerCase();
+
+    animeList.forEach(function(anime) {
+        const item = anime.firstChild.textContent;
+        if (item.toLowerCase().indexOf(text) != -1) {
+            anime.parentElement.parentElement.style.display = "block"
+        } else {
+            anime.parentElement.parentElement.style.display = "none"
+        }
+    })
+}
+</script>
+     <div class="about">
+     <h2>JAM</h2>
+     <p>JAM - Free movies online, here you can watch movies online in high quality for free without annoying<br/> of advertising, just come and enjoy your movies online.</p>
+     <p class="disclaimer">Disclaimer: This site does not store any files on its server. All contents are provided by non-affiliated third parties.</p> </div>
+    <footer>Copyright © 2021 JAM | All Rights Reserved</footer> 
+</div>
+</body>
+</html>
