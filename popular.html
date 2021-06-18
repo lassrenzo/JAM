@@ -60,10 +60,12 @@ function Navbar(props) {
 
 function Card(props) {
   return (  
+      <div class="wrapper">
                     <a class="imgP size">
                     <a class="number">{props.num}</a>
                         <a type="button" class="text-white bt btn fa fa-play" href="Dragon-Ball-Super-Broly.html"> Play</a>
-                    <img class="rounded mh-100 mw-100 img2" src={props.image}/></a>
+                    <img class="rounded mh-100 mw-100 img2" src={props.image}/> </a>
+                </div>
   )
 }
 // VARIABLE FOR JSX REACT
@@ -72,7 +74,7 @@ ReactDOM.render(
 // WHAt
 <div>
   <Navbar />
-      <div class="container-popular">
+      <div class="container-popular col d-flex justify-content-center">
                 <Card
                   num="1 "
                   image="https://i.pinimg.com/564x/d3/9c/84/d39c84ceb8fbb7909043debbc9134425.jpg"/>
@@ -88,7 +90,7 @@ ReactDOM.render(
                <Card
                   num="5"
                   image="https://i.pinimg.com/564x/7d/37/a4/7d37a4c49a2e3ac32a73cddbea51a94d.jpg"/>
-              </div>
+              </div><br/>
 </div>,
 // WHERE
 // THIS IS CODE FOR DESTINATION VARIABLE
