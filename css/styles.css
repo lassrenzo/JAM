@@ -463,11 +463,11 @@ footer {
 }
 @media only screen and (max-width: 540px) {
   .number {
-    margin-left: 2.5rem;
+    margin-left: 2rem;
   }
 }
 @media only screen and (max-width: 375px) {
   .number {
-    margin-left: 1.5rem;
+    margin-left: 0rem;
   }
 }
